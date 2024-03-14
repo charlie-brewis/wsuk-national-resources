@@ -1,40 +1,155 @@
 /*CSS*/
-body, h1, header, main, footer, div {
-	margin: 0;
-	padding: 0;
-	font-family: Arial, sans-serif;
+body,
+h1,
+header,
+main,
+footer,
+div {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 header {
-	background-color: #f5f5f5;
-	padding: 20px;
-	text-align: center;
-	border-bottom: 1px solid #ddd;
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
 }
 
 main {
-	padding-top: 60px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: calc(100vh - 60px);
-	margin: 0 auto;
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+  margin: 0 auto;
 }
 
 footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	padding: 1rem;
-	background-color: #f5f5f5;
-	border-top: 1px solid #ddd;
-	text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  text-align: center;
 }
 
 #copyrightYear {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 /*DO NOT MODIFY ANY CODE ABOVE*/
 /*PUT YOUR CSS CODE FROM THIS POINT ONWARD*/
+
+:root {
+  --dot-size: 50px;
+  --container-size: 125px;
+  --dist-to-center-dot: calc((var(--container-size) - var(--dot-size)) / 2);
+}
+
+.container {
+  width: var(--container-size);
+  height: var(--container-size);
+  position: relative;
+  /* background-color: black; */
+  /* animation-name: rotate-container; */
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotate-container {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  position: absolute;
+}
+
+#red {
+  background-color: #f63d3a;
+  transform: translate(var(--dist-to-center-dot));
+
+  animation-name: move-red;
+  animation-duration: 0.375s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: linear;
+}
+#green {
+  background-color: #19a68c;
+  transform: translate(75px, var(--dist-to-center-dot));
+
+  animation-name: move-green;
+  animation-duration: 0.375s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: linear;
+}
+#blue {
+  background-color: #193b48;
+  transform: translate(var(--dist-to-center-dot), 75px);
+
+  animation-name: move-blue;
+  animation-duration: 0.375s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: linear;
+}
+#yellow {
+  background-color: #fda543;
+  transform: translate(0px, var(--dist-to-center-dot));
+
+  animation-name: move-yellow;
+  animation-duration: 0.375s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: linear;
+}
+
+/* a dot is 50x50px : half is 25px. Gap from center to center is 75px*/
+
+/* @keyframes move-red {
+  from {
+  }
+  to {
+    transform: translate(-25px, -25px);
+  }
+}
+
+@keyframes move-green {
+  from {
+    transform: translate(75px);
+  }
+  to {
+    transform: translate(100px, -25px);
+  }
+}
+
+@keyframes move-blue {
+  from {
+    transform: translate(75px, 75px);
+  }
+  to {
+    transform: translate(100px, 100px);
+  }
+}
+
+@keyframes move-yellow {
+  from {
+    transform: translate(0px, 75px);
+  }
+  to {
+    transform: translate(-25px, 100px);
+  }
+} */

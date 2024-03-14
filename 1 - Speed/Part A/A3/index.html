@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speed A3</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Speed A3</title>
-	<link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-	<div>
-		<header>
-			<h1>Speed A3</h1>
-		</header>
-	</div>
-	<main>
-		<!--Put your code here-->
-	</main>
-	<footer id="dynamicFooter">
-	</footer>
-	<script>
-		document.getElementById('dynamicFooter').innerHTML = '&copy; ' + new Date().getFullYear() + ' WSUK Speed | All rights reserved.';
-	</script>
-</body>
-
+  <body>
+    <div>
+      <header>
+        <h1>Speed A3</h1>
+      </header>
+    </div>
+    <main>
+      <div class="container">
+        <div class="dot" id="red"></div>
+        <div class="dot" id="yellow"></div>
+        <div class="dot" id="green"></div>
+        <div class="dot" id="blue"></div>
+      </div>
+    </main>
+    <footer id="dynamicFooter"></footer>
+    <script>
+      document.getElementById("dynamicFooter").innerHTML =
+        "&copy; " +
+        new Date().getFullYear() +
+        " WSUK Speed | All rights reserved.";
+    </script>
+  </body>
 </html>
