@@ -37,3 +37,9 @@ footer {
 }
 /*DO NOT MODIFY ANY CODE ABOVE*/
 /*PUT YOUR CSS CODE FROM THIS POINT ONWARD*/
+
+canvas {
+	width: 460px;
+	height: 320px;
+	background-color: green;
+}
