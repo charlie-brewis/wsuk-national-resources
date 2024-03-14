@@ -55,14 +55,35 @@ footer {
   height: var(--container-size);
   position: relative;
   /* background-color: black; */
-  /* animation-name: rotate-container; */
-  animation-duration: 3s;
+  animation-name: rotate-container;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
 }
 @keyframes rotate-container {
   from {
     transform: rotate(0deg);
+  }
+  12.5% {
+    transform: rotate(45deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  37.5% {
+    transform: rotate(135deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  67.5% {
+    transform: rotate(225deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  87.5% {
+    transform: rotate(315deg);
   }
   to {
     transform: rotate(360deg);
@@ -81,75 +102,82 @@ footer {
   transform: translate(var(--dist-to-center-dot));
 
   animation-name: move-red;
-  animation-duration: 0.375s;
+  animation-duration: 0.5s;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
 }
 #green {
   background-color: #19a68c;
   transform: translate(75px, var(--dist-to-center-dot));
 
   animation-name: move-green;
-  animation-duration: 0.375s;
+  animation-duration: 0.5s;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
 }
 #blue {
   background-color: #193b48;
   transform: translate(var(--dist-to-center-dot), 75px);
 
   animation-name: move-blue;
-  animation-duration: 0.375s;
+  animation-duration: 0.5s;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
 }
 #yellow {
   background-color: #fda543;
   transform: translate(0px, var(--dist-to-center-dot));
 
   animation-name: move-yellow;
-  animation-duration: 0.375s;
+  animation-duration: 0.5s;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
 }
 
 /* a dot is 50x50px : half is 25px. Gap from center to center is 75px*/
 
-/* @keyframes move-red {
-  from {
-  }
+@keyframes move-red {
   to {
-    transform: translate(-25px, -25px);
+    transform: translate(var(--dist-to-center-dot));
+  }
+  from {
+    transform: translate(var(--dist-to-center-dot), calc(var(--dot-size) * -1));
   }
 }
 
 @keyframes move-green {
-  from {
-    transform: translate(75px);
-  }
   to {
-    transform: translate(100px, -25px);
+    transform: translate(75px, var(--dist-to-center-dot));
+  }
+  from {
+    transform: translate(
+      calc(var(--dot-size) + 75px),
+      var(--dist-to-center-dot)
+    );
   }
 }
 
 @keyframes move-blue {
-  from {
-    transform: translate(75px, 75px);
-  }
   to {
-    transform: translate(100px, 100px);
+    transform: translate(var(--dist-to-center-dot), 75px);
+  }
+  from {
+    transform: translate(
+      var(--dist-to-center-dot),
+      calc(var(--dot-size) + 75px)
+    );
   }
 }
 
 @keyframes move-yellow {
-  from {
-    transform: translate(0px, 75px);
-  }
   to {
-    transform: translate(-25px, 100px);
+    transform: translate(0px, var(--dist-to-center-dot));
   }
-} */
+  from {
+    transform: translate(calc(var(--dot-size) * -1), var(--dist-to-center-dot));
+  }
+}
